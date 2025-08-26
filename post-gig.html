@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Gig - Uganda Gigs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html">Uganda Gigs</a></h1>
+            <div id="authLinks">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+            <div id="userMenu" style="display: none;">
+                <a href="post-gig.html">Post a Gig</a>
+                <a href="profile.html">My Profile</a>
+                <button onclick="signOut()">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Post a New Gig</h2>
+            <p>Fill in the details to find the right person for the job.</p>
+
+            <form id="postGigForm">
+                <label for="title">Gig Title:*</label>
+                <input type="text" id="title" name="title" placeholder="e.g., Need a painter for my living room" required>
+
+                <label for="description">Description:*</label>
+                <textarea id="description" name="description" rows="4" placeholder="Describe the gig in detail. What needs to be done?" required></textarea>
+
+                <label for="requiredSkills">Required Skills:*</label>
+                <input type="text" id="requiredSkills" name="requiredSkills" placeholder="e.g., Painting, Driving, Web Design" required>
+
+                <label for="payAmount">Pay Amount (UGX):*</label>
+                <input type="number" id="payAmount" name="payAmount" min="0" placeholder="e.g., 50000" required>
+
+                <label for="location">Location:*</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Kampala, Makerere" required>
+
+                <label for="estimatedDuration">Estimated Duration:*</label>
+                <input type="text" id="estimatedDuration" name="estimatedDuration" placeholder="e.g., 3 hours, 2 days" required>
+
+                <button type="submit">Post Gig</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="gigs.js"></script>
+</body>
+  </html>
