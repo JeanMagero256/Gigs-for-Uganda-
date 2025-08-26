@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Gigs for Uganda</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="index.html">Uganda Gigs</a></h1>
+            <div id="authLinks">
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+            <div id="userMenu" style="display: none;">
+                <a href="post-gig.html">Post a Gig</a>
+                <a href="profile.html">My Profile</a>
+                <button onclick="signOut()">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>My Profile</h2>
+            
+            <div id="profileInfo">
+                <p>Loading your profile...</p>
+            </div>
+
+            <h3>Update Your Profile</h3>
+            <form id="profileForm">
+                <label for="fullName">Full Name:*</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="userType">I am a:*</label>
+                <select id="userType" name="userType" required>
+                    <option value="">Select your role</option>
+                    <option value="gig_seeker">Gig Seeker</option>
+                    <option value="gig_owner">Gig Owner</option>
+                </select>
+
+                <label for="skills">My Skills (comma separated):</label>
+                <input type="text" id="skills" name="skills" placeholder="e.g., Painting, Driving, Coding">
+
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+
+                <button type="submit">Update Profile</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
